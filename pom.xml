@@ -12,6 +12,7 @@
   <modules>
     <module>patient_service</module>
     <module>billing_service</module>
+    <module>analytics_service</module>
   </modules>
 
   <!-- Optional: dependencyManagement for consistent Spring Boot versions -->
