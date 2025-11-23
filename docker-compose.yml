@@ -12,3 +12,17 @@ services:
     volumes:
 
       - C:/Users/Dell/db_volumes/patient-service-db:/var/lib/postgresql
+
+
+    # kafka
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    container_name: kafka-ui
+    ports:
+      - "8080:8080"
+    extra_hosts:
+      - "host.docker.internal:host-gateway" # Helps Linux/some Windows setups resolve the host
+    environment:
+      KAFKA_CLUSTERS_0_NAME: local
+      # MAGIC LINE: Connects to the Kafka running in IntelliJ
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS:  192.168.31.168:9094
